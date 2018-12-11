@@ -1,0 +1,16 @@
+version: "3.3"
+
+networks:
+  backend:
+
+services:
+  app:
+    image: asgan/terra:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "iex"
+    volumes:
+      - .:/code
+    networks:
+      - backend
